@@ -1,0 +1,51 @@
+Implement XOR check method in every command.
+
+Implement XOR/XOFF flow control. (Software flow control)
+
+Implement commands (from LOHS version 4):
+		CMD_LECART_NC   20      /* Habilita leitura em níveis de cinza Leitora 4 */
+		CMD_DEF_THRSLD  21      /* Define Threshold Leitora 4 */
+		CMD_DEF_BT_NC   22      /* Define modo de leitura bitonal ou nível de cinza Leitora 4 */
+		CMD_DEF_EVENTO  23	/* Define se o evento é gerado pela aplicação ou pela leitora Leitora 4 */
+	
+
+set_serialline:
+	- Try to do serial line options be set in function parameters
+
+LOHS_enable_comm_test:
+LOHS_disable_comm_test:
+	- Join in a single funcion:  LOHS_comm_test(ON/OFF)
+
+LOHS_verify_type:
+	- Use enum vtype_t { XOR, CRC16 } as argument
+
+LOHS_read_mask:
+	- Understood how read_mask works
+	- Implement the function
+
+LOHS_flow_control:
+	- Use enum fcontrol_t { XONXOFF, RTSCTS } as argument
+	- When send info to reader automagicly set serial line
+
+LOHS_text_block:
+	- Understood how bits are mapped
+	- Implement in a proper way
+
+LOHS_display_text:
+	- Convert output message (function argument) in hexadecimal bytes, and insert in frame body
+	- Generate frame, based in message (Size, message and CRC will change)
+	- 09 isn't the command number... discover the truth.
+
+Create a command line software that read a card and exit:
+
+IDEA:
+
+lohs_read <OPTIONS>
+
+Where:
+	-h 			this help
+	-p <PORT>		(ex. ttyS0, without /dev/, default /dev/lohs )
+	-s <SPEED>		(ex. 9600, default 9600)
+	-f <FLOWCONTROL> 	(ex. XONXOFF / RTSCTS, default  RTSCTS)
+	-c NUMCLOCKS		(ex. 40, default 0=no matter)
+	-r READS		(ex. 1 / 2, default 1)

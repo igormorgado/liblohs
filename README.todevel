@@ -1,0 +1,24 @@
+There is some problems that I found in my code, I hope that someone could show me a better way to implement it
+
+
+Problem 1:
+How to purge global variable fd, and work with internal fd, without send fd into every command.
+
+Problem 2: (FINISHED)
+How to purge global variable mesg, someone say that malloc should help me (but I don't know how to implement)
+
+Problem 3:
+In functions that returns TRUE/FALSE(0/1), int is a proper return value, or should I use bool?
+
+Problem 4:
+There is some functions that recieve a limited number of options, example: LOHS_flow_control, there is 2 options HARDWARE and SOFTWARE, should I create a enum? or should I use int (0 to hardware, 1 to software)?
+
+Problem 5:
+Implement a more versatile library, to handle software flow control (not implemented), and XOR check (not implemented), maybe those changes will demand a library rewrite.
+
+Problem 6:
+Should LOHS_read_times be changed to something as LOHS_enable_double_read(). And single read should be always default? Or if LOHS_enable_double_read is FALSE, single read is enabled.
+
+
+
+
