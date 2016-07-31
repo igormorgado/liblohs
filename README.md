@@ -8,7 +8,6 @@ Changelog
 
 0.01:
         - Initial release/freshmeat release
-
         - Developers only release
 
 0.02:
@@ -16,7 +15,6 @@ Changelog
 
 0.03:
         - Added timeval struct support in lohs.c:strRX()
-
         - Bug Fixed: lohs.c:strTX missing strncpy()
 
 
